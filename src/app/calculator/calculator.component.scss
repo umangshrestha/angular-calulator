@@ -1,0 +1,46 @@
+.display {
+    text-align: right;
+    grid-column: span 4;
+
+    input {
+        width: 100%;
+        text-align: right;
+        font-size: 3.5em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+
+#backspace {
+    font-size: 3.5em;
+}
+
+#add {
+    grid-area: 3/ 1;
+}
+
+#subtract {
+    grid-area: 4/ 1;
+}
+
+#multiply {
+    grid-area: 5/ 1;
+}
+
+#divide {
+    grid-area: 6/ 1;
+}
+
+button {
+    font-size: 2em;
+    background-color: #fff;
+    cursor: pointer;
+}

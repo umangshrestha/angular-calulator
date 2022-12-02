@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="display">
+        <input matInput placeholder="0" type="text" [value]="input" [readonly]="true">
+        <mat-error *ngIf="error"> <strong>{{error}}</strong> </mat-error>
+        <mat-hint *ngIf="!error"> <strong>{{output}}</strong> </mat-hint>
+    </div>
+
+    <button mat-button (click)="backspace()" id="backspace" aria-label="backspace">
+        <mat-icon color="warn" inline="true">backspace</mat-icon>
+    </button>
+    <button mat-stroked-button color="primary" (click)="addString('(')" id="open-parenthesis">(</button>
+    <button mat-stroked-button color="primary" (click)="addString(')')" id="close-parenthesis">)</button>
+    <button mat-flat-button color="warn" (click)="clear()" id="ce" aria-label="clear">CE</button>
+
+    <!--operators: +, -, /, *, (, )-->
+    <button mat-stroked-button color="primary" (click)="addString('+')" id="add">+</button>
+    <button mat-stroked-button color="primary" (click)="addString('-')" id="subtract">-</button>
+    <button mat-stroked-button color="primary" (click)="addString('*')" id="multiply">*</button>
+    <button mat-stroked-button color="primary" (click)="addString('/')" id="divide">/</button>
+    <!--numbers: 1, 2, 3, ..9-->
+    <button mat-stroked-button color="accent" *ngFor="let _ of [].constructor(10); let i=index"
+        (click)="addString((9-i).toString())">{{9-i}}</button>
+
+    <button mat-stroked-button (click)="addString('.')">.</button>
+
+    <button mat-flat-button (click)="process()" id="equals" color="primary">=</button>
+
+</div>

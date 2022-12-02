@@ -1,0 +1,18 @@
+main {
+    width: 400px;
+    height: 550px;
+}
+
+
+mat-card-title, mat-card-footer {
+    text-align: center;
+}
+
+
+@media (max-width: 400px) {
+    main {
+        width: 100%;
+        height: 100%;
+    }
+}
+
